@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import MovieCard from "../components/MovieCard";
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import MovieCard from '../components/MovieCard';
 
 const searchURL = import.meta.env.VITE_SEARCH;
 const apiKey = import.meta.env.VITE_API_KEY;
 
-import "./MoviesGrid.css";
+import './MoviesGrid.css';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
 
   const [movies, setMovies] = useState([]);
-  const query = searchParams.get("q");
+  const query = searchParams.get('q');
 
   const getSearchedMovies = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
+    console.log(data.results);
     setMovies(data.results);
   };
 
