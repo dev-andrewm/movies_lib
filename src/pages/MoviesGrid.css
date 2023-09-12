@@ -60,3 +60,15 @@
   background-color: transparent;
   color: #f7d354;
 }
+
+@media (max-width: 450px) {
+  .movies-container div {
+    width: 100%;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+  .movies-container div {
+    width: 47%;
+  }
+}
